@@ -4,7 +4,7 @@ class TamanNasional extends CI_Controller {
 
    public function index()
   {
-  
+
     $data['body'] = 'home';
     // untuk me-load halaman di view
     $this->load->view('header',$data);
@@ -18,7 +18,7 @@ class TamanNasional extends CI_Controller {
     $this->load->view('views/header');
   }
 
-  public function newTamanNasional(){
+  public function newTamanNasional($data){
 
   }
 
