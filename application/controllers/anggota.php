@@ -13,6 +13,12 @@ class Anggota extends CI_Controller {
     $this->load->view('anggota',$data);
   }
 
+  public function showSignUp(){
+    $this->load->view('signup');
+  }
+  public function showSignIn(){
+    $this->load->view('signin');
+  }
   public function daftarBaru(){
     $data = $this->input->post('daftarbaru');
 

@@ -40,7 +40,8 @@
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
-
+$route['signin'] = "anggota/showSignIn";
+$route['signup'] = "anggota/showSignUp";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
