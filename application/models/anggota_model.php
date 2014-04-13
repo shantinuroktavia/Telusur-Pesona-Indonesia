@@ -78,14 +78,22 @@ class Anggota_Model extends CI_Model {
   public function setPassword($username, $newpass){
     $this->load->database();
 
-    $cookie = $this->input->cookie('Telusur Pesona Indonesia');
+  //  $cookie = $this->input->cookie('Telusur Pesona Indonesia');
 
     if($cookie){
-      $username = $cookie['value'];
+    //  $username = $cookie['value'];
       $this->load->library('encrypt');
       $enc_pass = $this->encrypt->encode($newpass);
       $query = $this->db->query('UPDATE Anggota set password='.$this->db->escape($enc_pass).' WHERE username='.$this->db->escape($username));
 
+    }
+  }
+
+  public function editProfile($username, $data){
+    $this->load->database();
+
+    if($data['name']){
+    $query = $this->db->query('UPDATE Anggota set nama='.$this->db->escape($enc_pass).' WHERE username='.$this->db->escape($username));
     }
   }
 }

@@ -125,7 +125,9 @@ class Anggota extends CI_Controller {
 
     if($valid){
       $this->load->model('Anggota_Model');
-      $this->Anggota_Model->changePassword($username);
+      $cookie = $this->input->cookie('Telusur Pesona Indonesia');
+      $username = $cookie['value'];
+      $this->Anggota_Model->changePassword($username,$pass);
     }
     else $this->load->view('changepass',$errmess);
   }
