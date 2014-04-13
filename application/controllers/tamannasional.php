@@ -15,15 +15,25 @@ class TamanNasional extends CI_Controller {
     $this->load->model('Taman_Nasional_Model');
     $data = $this->Taman_Nasional_Model->getDataTaman($index);
     $this->load->view('taman_nasional',$data);
-    $this->load->view('views/header');
+    $this->load->view('header');
   }
 
-  public function newTamanNasional($data){
+  public function newTamanNasional(){
 
   }
 
   public function cari($kriteria, $keyword){
-
+    $this->load->model('Taman_Nasional_Model');
+    $result = array();
+    if($kriteria == 'nama'){
+      $result = $this->Taman_Nasional_Model->grabTamanByName($keyword);
+    }else if($kriteria == 'waktu'){
+      $result = $this->Taman_Nasional_Model->grabTamanByTime($keyword);
+    }else if($kriteria == 'aktivitas'){
+      $result = $this->Taman_Nasional_Model->grabTamanByActivity($keyword);
+    }else if($kriteria == 'provinsi'){
+      $result = $this->Taman_Nasional_Model->grabTamanByProvince($keyword);
+    }
   }
 
   public function addFoto($idTaman, $idFoto){

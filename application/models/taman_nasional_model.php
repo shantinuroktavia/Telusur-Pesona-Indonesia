@@ -2,45 +2,50 @@
 
 class Taman_Nasional_Model extends CI_Model {
 
-  private var idTaman = 0;
-  private var nama = '';
-  private var provinsi = '';
-  private var profil = '';
-  private var akses = '';
-  private var nomorKontak = '';
-  private var htm = 0;
-  private var tips = '';
-  private var foto = [];
-  private var penginapan = [];
-
   function __construct()
   {
     /* Call the Model constructor */
     parent::__construct();
   }
 
-  public function getDataTaman(int idtaman){
+  public function getDataTaman($idtaman){
     $this->load->database();
 
-    $query = $this->db->query('SELECT * FROM TamanNasional WHERE id='.$idtaman);
+    $query = $this->db->query('SELECT * FROM TamanNasional WHERE IdTN='.$idtaman);
 
-    return $query;
+    return $query->row_array();
   }
 
-  public function getDataPenginapan(int idpenginapan){
+  public function grabTamanByName($keyword){
     $this->load->database();
 
-    $query = $this->db->query('SELECT * FROM Penginapan WHERE id='.$idpenginapan);
+    $query = $this->db->query('SELECT * FROM TamanNasional WHERE IdTN LIKE \'%'.$keyword.'%\'');
 
-    return $query;
+    return $query->result_array();
   }
 
-  public function getFotoTaman(int idfoto){
+  public function grabTamanByWaktu($keyword){
     $this->load->database();
 
-    $query = $this->db->query('SELECT * FROM Penginapan WHERE id='.$idfoto);
+    //$query = $this->db->query('SELECT * FROM TamanNasional WHERE IdTN LIKE \'%'.$keyword.'%\'');
 
-    return $query;
+    //return $query->result_array();
+  }
+
+  public function getIdPenginapan($idtaman){
+    $this->load->database();
+
+    $query = $this->db->query('SELECT * FROM Penginapan WHERE IdTN='.$idpenginapan);
+
+    return $query->row_array();
+  }
+
+  public function getIdFotoTaman($idTaman){
+    $this->load->database();
+
+    $query = $this->db->query('SELECT * FROM Penginapan WHEREIdTN='.$idfoto);
+
+    return $query->row_array();
   }
 
 }

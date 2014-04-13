@@ -6,9 +6,9 @@ class Anggota extends CI_Controller {
 
   }
 
-  public function viewAnggota($idAnggota){
+  public function view($idAnggota){
     $this->load->model('Anggota_Model');
-    $data = $this->Anggota_Model->getDataAnggota($index);
+    $data = $this->Anggota_Model->getDataAnggota($idAnggota);
 
     $this->load->view('anggota',$data);
   }
@@ -97,5 +97,34 @@ class Anggota extends CI_Controller {
 
   public function signOut(){
     //tinggal hapus cookie
+  }
+
+  public function changePass(){
+    $data = $this->input->post('gantipass');
+
+    $oldpass = $data['passlama'];
+    $pass = $data['password'];
+    $confpass = $data['passconfirm'];
+
+    if($pass != $confpass){
+      $errmess['pesan'] = 'Konfirmasi password tidak sama';
+      $valid=false;
+    }else if(strlen($pass)<6||strlen($pass)>24){
+      $errmess['pesan'] = 'Panjang password tidak valid');
+      $valid=false;
+    } else if (!preg_match("/[A-Za-z0-9_]+/",)){
+      $errmess['pesan'] = 'Password tidak valid');
+      $valid=false;
+    }
+
+    if($valid){
+      $this->load->model('Anggota_Model');
+      $this->Anggota_Model->changePassword($username);
+    }
+    else $this->load->view('changepass',$errmess);
+  }
+
+  public function changeProfile($data){
+
   }
 }
