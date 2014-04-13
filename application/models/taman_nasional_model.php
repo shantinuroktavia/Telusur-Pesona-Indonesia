@@ -13,7 +13,9 @@ class Taman_Nasional_Model extends CI_Model {
 
     $query = $this->db->query('SELECT * FROM TamanNasional WHERE IdTN='.$idtaman);
 
-    return $query->row_array();
+    $data = $query->row_array();
+
+     return $data;
   }
 
   public function grabTamanByName($keyword){

@@ -55,17 +55,10 @@ class Anggota_Model extends CI_Model {
       $this->load->library('encrypt');
       $enc_pass = $this->encrypt->encode($data['password']);
       if (strcmp($row['password'],$enc_pass)==0){
-        //kalo cocok pasang cookie
-        $cookie = array(
-          'name' => 'Telusur Pesona Indonesia',
-          'value' => $data['username'],
-          'expire' => 86400,
-          'domain' => '.telusurpesonaindonesia.com',
-          'path'   => '/',
-          'prefix' => 'tlpi_',
-          'secure' => true
-        );
-        $this->input->set_cookie($cookie);
+        //kalo cocok pasang session
+        $this->session->set_userdata('username',$data['username']);
+        $this->session->set_userdata('remember',$data['remember']);
+
       } else {
         $success = false;
       }
@@ -78,10 +71,8 @@ class Anggota_Model extends CI_Model {
   public function setPassword($username, $newpass){
     $this->load->database();
 
-  //  $cookie = $this->input->cookie('Telusur Pesona Indonesia');
 
-    if($cookie){
-    //  $username = $cookie['value'];
+    if($this->session->userdata('session_id')){
       $this->load->library('encrypt');
       $enc_pass = $this->encrypt->encode($newpass);
       $query = $this->db->query('UPDATE Anggota set password='.$this->db->escape($enc_pass).' WHERE username='.$this->db->escape($username));

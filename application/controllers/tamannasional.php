@@ -14,6 +14,8 @@ class TamanNasional extends CI_Controller {
   public function show($index){
     $this->load->model('Taman_Nasional_Model');
     $data = $this->Taman_Nasional_Model->getDataTaman($index);
+    $data['daftarpenginapan'] = $this->getPenginapan($data['IdTN']);
+
     $this->load->view('taman_nasional',$data);
     $this->load->view('header');
   }
@@ -62,6 +64,12 @@ class TamanNasional extends CI_Controller {
 
   public function shareDetail($taman){
 
+  }
+
+  public function getAllPenginapan($idTaman){
+    $this->load->model('Penginapan_Model');
+
+    return $this->Penginapan_Model->getAllPenginapan($idTaman);
   }
 
   public function getAllFoto($idTaman){

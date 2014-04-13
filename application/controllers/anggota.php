@@ -102,7 +102,7 @@ class Anggota extends CI_Controller {
   }
 
   public function signOut(){
-    //tinggal hapus cookie
+    $this->session->sess_destroy();
   }
 
   public function changePass(){
@@ -125,8 +125,7 @@ class Anggota extends CI_Controller {
 
     if($valid){
       $this->load->model('Anggota_Model');
-      $cookie = $this->input->cookie('Telusur Pesona Indonesia');
-      $username = $cookie['value'];
+      $username = $this->session->userdata('username');
       $this->Anggota_Model->changePassword($username,$pass);
     }
     else $this->load->view('changepass',$errmess);
