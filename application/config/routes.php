@@ -40,8 +40,7 @@
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
-$route['signin'] = "anggota/showSignIn";
-$route['signup'] = "anggota/showSignUp";
+$route['taman_nasional/(:num)'] = 'taman/get_taman_nasional/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

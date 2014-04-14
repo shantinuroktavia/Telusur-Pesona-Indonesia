@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `Post` (
+	`IdThread` INT(10) NOT NULL AUTO_INCREMENT,
+	`IdPost` INT(10) NOT NULL, 
+	`TanggalPost` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`Isi` TEXT NOT NULL,
+	PRIMARY KEY (`IdPost`),
+	KEY `IdThread` (`IdThread`)
+);

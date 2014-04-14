@@ -3,21 +3,27 @@
 class Anggota extends CI_Controller {
 
   public function index(){
-
+    show_404();
   }
 
   public function view($idAnggota){
     $this->load->model('Anggota_Model');
-    $data = $this->Anggota_Model->getDataAnggota($idAnggota);
+    $data['anggota'] = $this->Anggota_Model->getDataAnggota($idAnggota);
 
     $this->load->view('anggota',$data);
   }
 
   public function showSignUp(){
-    $this->load->view('signup');
+    $data['body'] = 'bodysignin';
+    // untuk me-load halaman di view
+    $this->load->vars($data);
+    $this->load->view('newHeader');
   }
   public function showSignIn(){
-    $this->load->view('signin');
+    $data['body'] = 'bodysignin';
+    // untuk me-load halaman di view
+    $this->load->vars($data);
+    $this->load->view('newHeader');
   }
   public function daftarBaru(){
     $data = $this->input->post('daftarbaru');

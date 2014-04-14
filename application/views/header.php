@@ -11,10 +11,12 @@
     <title>Halaman Utama Telusur Pesona Indonesia</title>
 	
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url ('/bootstrap-3.1.1/dist/css/').'bootstrap.min.css';?>" rel="stylesheet">
+    <link href="<?php echo base_url('/bootstrap/dist/css').'/bootstrap.css';?>" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="<?php echo base_url('/bootstrap-3.1.1/dist/css/').'home.css';?>" rel="stylesheet">
+    <link href="<?php echo base_url('/bootstrap/dist/css').'/home.css';?>" rel="stylesheet">
+
+    <link href="<?php echo base_url('/bootstrap/dist/css').'/signin.css';?>" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -36,9 +38,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button
-		  <img src="logo.jpg" alt="logo">
-         <!-- <a class="navbar-brand" href="#">Telusur Pesona Indonesia</a> -->
+          </button>
+          <img src="<?php echo base_url('design/').'/logobaru.png';?>" width="150" alt="logo">
+		           <!-- <a class="navbar-brand" href="#">Telusur Pesona Indonesia</a> -->
         </div>
 		
 		
@@ -49,7 +51,7 @@
             <li class="active"><a href="#Home">Beranda</a></li>
             <li><a href="#Taman">Taman Nasional</a></li>
             <li><a href="#Forum">Forum</a></li>
-			<li><a href="#Search">Pencarian</a></li>
+			      <li><a href="#Search">Pencarian</a></li>
           </ul>
 		</div><!--/.row -->  
         </div><!--/.menu -->
@@ -58,14 +60,14 @@
 
  <?php $this->load->view($body); ?>
 
-  <div class="panel">
-  <div class="row">
-  <div class="panel-body">
-    <h5>Copyright PPL C05 </h5>
-    <h5>Data Source MAPALA UI</h5>
-  </div>
-  </div><!-- /.row -->
-  </div>
+    <div class="panel">
+    <div class="row">
+    <div class="panel-body">
+      <h5>Copyright PPL C05 </h5>
+      <h5>Data Source MAPALA UI</h5>
+    </div>
+    </div><!-- /.row -->
+    </div>
 
-    </body>
+  </body>
 </html>

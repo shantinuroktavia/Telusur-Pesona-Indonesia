@@ -7,4 +7,5 @@ class Thread_Model extends CI_Model {
     /* Call the Model constructor */
     parent::__construct();
   }
+
 }
