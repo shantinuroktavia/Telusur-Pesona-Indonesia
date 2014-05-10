@@ -38,9 +38,14 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "tamannasionalcontroller";
 $route['404_override'] = '';
-$route['taman_nasional/(:num)'] = 'taman/get_taman_nasional/$1';
+$route['tamannasional/(:num)'] = 'tamannasionalcontroller/show/$1';
+$route['uploadfoto/(:num)'] = 'tamannasionalcontroller/showUploadFotoForm/$1';
+$route['profil/(:num)'] = 'anggotacontroller/view/$1';
+$route['forum'] = 'forumcontroller';
+$route['forum/(:num)'] = 'forumcontroller/showThread/$1';
+$route['forum/newThread'] = 'forumcontroller/newThreadForm';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

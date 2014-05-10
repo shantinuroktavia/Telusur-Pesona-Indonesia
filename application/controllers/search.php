@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
-class SignIn extends CI_Controller {
+class search extends CI_Controller {
 
   /**
   * Index Page for this controller.
@@ -21,7 +21,7 @@ class SignIn extends CI_Controller {
   public function index()
   {
   
-    $data['body'] = 'signin';
+    $data['body'] = 'SearchUI';
     // untuk me-load halaman di view
     $this->load->vars($data);
     $this->load->view('headerUmum');

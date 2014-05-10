@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Carousel Template for Bootstrap</title>
+    <title><?php echo $tamannasional['NamaTaman'];?> - Telusur Pesona Indonesia</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,20 +18,28 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   </head>
-<!-- NAVBAR
-================================================== -->
+  <!-- NAVBAR
+  ================================================== -->
   <body>
     <div class="container marketing">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Taman Nasional Ujung Kulon</h3>
+          <h3 class="panel-title"><?php echo $tamannasional['NamaTaman'];?></h3>
         </div>
         <!-- Three columns of text below the carousel -->
         <div class="row">
@@ -39,13 +47,15 @@
             <h3>Review</h3>
             <hr class="divider">
             <div class="form-group">
-              <p>Mahasiswa semester enam Fasilkom UI ini senang jalan-jalan. Diwaktu senggang lebih memilih baca buku, blog walking, dan ngobrol hal-hal sederhana. Penikmat hujan dari luar maupun dalam ruangan.</p>
+              <?php echo $tamannasional['Profil'];?>
             </div>
             <hr class="divider">
-            <div class="form-group">
-              <p>Mahasiswa semester enam Fasilkom UI ini senang jalan-jalan. Diwaktu senggang lebih memilih baca buku, blog walking, dan ngobrol hal-hal sederhana. Penikmat hujan dari luar maupun dalam ruangan.</p>
-            </div>
-            <hr class="divider">
+            <h4>Komentar</h4>
+            <table class="review" width="30%">
+              <tr>
+                <td class="review">Tes</td>
+              </tr>
+            </table>
           </div><!--/.col-lg-3-->
           <div class="col-lg-9">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -57,132 +67,150 @@
               </ol>
               <div class="carousel-inner">
                 <div class="item active">
-                  <img src="1.jpg" alt="First slide">
+                  <img src="<?php echo base_url('/fototaman/1.jpg');?>" alt="First slide">
                   <div class="container">
                     <div class="carousel-caption">
-                      <h1>Ini Contoh Judul</h1>
+                      <h1><?php echo $tamannasional['NamaTaman'];?></h1>
                       <p>Ini contoh isi caption dari foto taman nasional</p>
-                      <p><a class="btn btn-lg btn-primary" href="#" role="button">Share</a></p>
                     </div>
                   </div>
                 </div>
                 <div class="item">
-                  <img src="2.jpg" alt="Second slide">
+                  <img src="<?php echo base_url('/fototaman/2.jpg');?>" alt="Second slide">
                 </div>
                 <div class="item">
-                  <img src="3.jpg" alt="Third slide">
+                  <img src="<?php echo base_url('/fototaman/3.jpg');?>" alt="Third slide">
                 </div>
               </div>
               <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
               <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
             <div class="tambahan">
-              <p>
-                <button type="button" class="btn btn-default">Galeri Foto</button> 
-                <button type="button" class="btn btn-default">Upload Foto</button> 
-                Share : 
-                <a href="www.facebook.com"><img src="facebook.png" width="52px" height="52px"></a>
-                <a href="www.twitter.com"><img src="twitter.png" width="52px" height="52px"></a>
-              </p>
+              <table>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-default">Galeri Foto</button>
+                  </td>
+                  <td><ul></ul></td>
+                  <td>
+                    <button type="button" class="btn btn-default">Upload Foto</button>
+                  </td>
+                  <td>
+                    <ul class="social_network">
+                      <li>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true" data-count="none" data-via="twitterapi">Tweet</a>
+                      </li>
+                      <li>
+                        <a class="fb-share-button" data-href="<?php echo site_url('/tamannasional/'.$tamannasional['IdTaman']);?>" data-type="button">Share</a>
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <input id="input-id" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs">
+                  </td>
+                </tr>
+              </table>
             </div>
             <hr class="divider">
             <div class="row">
               <div id="informasi">
                 <div class="col-lg-4">
                   <a data-toggle="collapse" data-parent="#informasi" href="#aksesibilitas">
-                    Aksesibilitas
+                  Aksesibilitas
                   </a>
                   <br>
                   <a data-toggle="collapse" data-parent="#informasi" href="#waktu">
-                    Waktu Kunjung Terbaik
+                  Waktu Kunjung Terbaik
                   </a>
                   <br>
                   <a data-toggle="collapse" data-parent="#informasi" href="#sarana">
-                    Sarana Layanan Pengunjung
+                  Sarana Layanan Pengunjung
                   </a>
+                  <br>
                   <a data-toggle="collapse" data-parent="#informasi" href="#kontak">
-                    Kontak Pengelola
+                  Kontak Pengelola
                   </a>
                   <br>
                   <a data-toggle="collapse" data-parent="#informasi" href="#htm">
-                    Tiket Masuk
+                  Tiket Masuk
                   </a>
                   <br>
                   <a data-toggle="collapse" data-parent="#informasi" href="#tips">
-                    Tips
+                  Tips
                   </a>
+                  <br>
                   <a data-toggle="collapse" data-parent="#informasi" href="#penginapan">
-                    Area Kemping / Penginapan
+                  Area Kemping / Penginapan
                   </a>
                   <br>
                   <a data-toggle="collapse" data-parent="#informasi" href="#aktivitas">
-                    Aktivitas yang Dapat Dilakukan
+                  Aktivitas yang Dapat Dilakukan
                   </a>
                   <br>
                   <a data-toggle="collapse" data-parent="#informasi" href="#halmenarik">
-                    Hal-Hal Menarik
+                  Hal-Hal Menarik
                   </a>
                 </div>
                 <div class="col-lg-8">
                   <div id="aksesibilitas" class="collapse">
                     <center><h3>Aksesibilitas</h3></center>
                     <p>
-                      aksesibilitas lkjashdflkjhasdlkjhalskdjflkajsdhflkjahsdlk
-                      <br>
+                      <?php echo $tamannasional['Akses'];?>
+                    <br>
                     </p>
                   </div>
                   <div id="waktu" class="collapse">
                     <center><h3>Waktu Kunjung Terbaik</h3></center>
                     <p>
-                      htm asdfjhasdflkjashdflkjhasdlkjhalskdjflkajsdhflkjahsdlk
-                      <br>
+                      <?php echo $tamannasional['Waktu'];?>
+                    <br>
                     </p>
                   </div>
                   <div id="sarana" class="collapse">
                     <center><h3>Sarana Layanan Pengunjung</h3></center>
                     <p>
-                      lokasi fjhasdflkjashdflkjhasdlkjhalskdjflkajsdhflkjahsdlk<br>
+                      <?php echo $tamannasional['Sarana'];?>
                     </p>
                   </div>
                   <div id="kontak" class="collapse">
                     <center><h3>Kontak Pengelola</h3></center>
                     <p>
-                      aksesibilitas lkjashdflkjhasdlkjhalskdjflkajsdhflkjahsdlk<br>
+                      <?php echo $tamannasional['NomorKontak'];?>
                     </p>
                   </div>
                   <div id="htm" class="collapse">
                     <center><h3>Tiket Masuk</h3></center>
                     <p>
-                      htm asdfjhasdflkjashdflkjhasdlkjhalskdjflkajsdhflkjahsdlk<br>
+                      <?php echo $tamannasional['HTM'];?>
                     </p>
                   </div>
                   <div id="tips" class="collapse">
                     <center><h3>Tips</h3></center>
                     <p>
-                      lokasi fjhasdflkjashdflkjhasdlkjhalskdjflkajsdhflkjahsdlk<br>
+                      <?php echo $tamannasional['Tips'];?>
                     </p>
                   </div>
                   <div id="penginapan" class="collapse">
                     <center><h3>Area Kemping / Penginapan</h3></center>
-                    <p>
-                      aksesibilitas lkjashdflkjhasdlkjhalskdjflkajsdhflkjahsdlk<br>
-                    </p>
+                    <!--<p>
+                      <?php echo $tamannasional['Penginapan'];?>
+                    </p>-->
                   </div>
                   <div id="aktivitas" class="collapse">
                     <center><h3>Aktivitas yang Dapat Dilakukan</h3></center>
                     <p>
-                      htm asdfjhasdflkjashdflkjhasdlkjhalskdjflkajsdhflkjahsdlk<br>
+                      <?php echo $tamannasional['Aktivitas'];?>
                     </p>
                   </div>
                   <div id="halmenarik" class="collapse">
                     <center><h3>Hal-Hal Menarik</h3></center>
                     <p>
-                      lokasi fjhasdflkjashdflkjhasdlkjhalskdjflkajsdhflkjahsdlk<br>
+                      <?php echo $tamannasional['HalMenarik'];?>
                     </p>
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div><!--/.col-lg-9-->
         </div><!-- /.row -->

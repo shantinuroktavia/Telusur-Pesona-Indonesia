@@ -3,61 +3,22 @@
 /* Padding below the footer and lighter body text */
 
 body {
+  padding-top: 40px;
   padding-bottom: 40px;
-  color: #5a5a5a;
+  background-color: #e8b826;
 }
 
-
-
-/* CUSTOMIZE THE NAVBAR
+/* CUSTOMIZE THE PANEL
 -------------------------------------------------- */
-
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
-.navbar-wrapper {
+.panel{
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 20;
+  left: 10%;
+  width: 80%;
 }
-
-/* Flip around the padding for proper display in narrow viewports */
-.navbar-wrapper .container {
-  padding-right: 0;
-  padding-left: 0;
+.panel-title{
+  text-align: center;
+  font-size: 32px;
 }
-.navbar-wrapper .navbar {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-/* Carousel base class */
-.carousel {
-  height: 500px;
-  margin-bottom: 60px;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  z-index: 10;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel .item {
-  height: 500px;
-  background-color: #777;
-}
-.carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 500px;
-}
-
 
 
 /* MARKETING CONTENT
@@ -70,34 +31,63 @@ body {
 }
 
 /* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
+.marketing .col-lg-3 {
+  margin-top:10px;
   margin-bottom: 20px;
+  text-align: left;
+}
+.marketing .col-lg-3 h3 {
   text-align: center;
+}
+.marketing .col-lg-3 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.marketing .col-lg-9 {
+  margin-top:10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.marketing .col-lg-9 p {
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: left;
 }
 .marketing h2 {
   font-weight: normal;
 }
-.marketing .col-lg-4 p {
+.form-horizontal .control-label{
+  text-align: left;
+}
+.pull-right {
+  margin-right: 50px;
+}
+#.btn{
+  border-color: #e8b826;
+  background-color: inherit;
+  color: #e8b826;
+  width: 130px;
+}
+.btn:hover{
+  border-color: #e8b826;
+  background-color: #e8b826;
+  color: #fff;
+}
+input {
+  margin-right: 50px;
+  margin-bottom: 5px;
+}
+.form-control {
+  width: 94%
+}
+.tambahan {
+  margin-top: 10px;
   margin-right: 10px;
-  margin-left: 10px;
 }
-
-
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+.item img {
+  width: 900px;
+  height: 500px;
 }
-
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
-
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */

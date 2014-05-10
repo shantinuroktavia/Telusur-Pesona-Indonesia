@@ -1,6 +1,6 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class SignIn extends CI_Controller {
+class UbahPassword extends CI_Controller {
 
   /**
   * Index Page for this controller.
@@ -20,10 +20,8 @@ class SignIn extends CI_Controller {
 
   public function index()
   {
-  
-    $data['body'] = 'signin';
-    // untuk me-load halaman di view
-    $this->load->vars($data);
-    $this->load->view('headerUmum');
+    $this->load->model('Anggota_Model');
+    $data['anggota'] = $this->Anggota_Model->getDataAnggota(get_cookie('TelusurPesonaIndonesia'));
+    load_view('ubahpassword',$data);
   }
 }

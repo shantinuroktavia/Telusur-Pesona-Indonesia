@@ -24,6 +24,6 @@ class SignUp extends CI_Controller {
     $data['body'] = 'signup';
     // untuk me-load halaman di view
     $this->load->vars($data);
-    $this->load->view('headerfix');
+    $this->load->view('headerUmum');
   }
 }

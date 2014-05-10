@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://kawung.cs.ui.ac.id/~ahmand.rizqi/telusurpesonaindonesia';
+$config['base_url']	= 'http://localhost/telusurpesonaindonesia';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'krehogt874ojgvnioegjHIFNWHti0v2n';
 
 /*
 |--------------------------------------------------------------------------

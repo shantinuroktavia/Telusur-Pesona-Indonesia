@@ -11,7 +11,7 @@ class Penginapan_Model extends CI_Model {
   public function getAllPenginapan($idTaman){
     $this->load->database();
 
-    $query = $this->db->query('SELECT * FROM Penginapan WHERE IdTN = '.$this->db->escape($idTaman));
+    $query = $this->db->query('SELECT * FROM Penginapan WHERE IdTaman = '.$this->db->escape($idTaman));
 
     return $query->result_array();
   }

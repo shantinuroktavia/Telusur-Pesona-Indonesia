@@ -11,17 +11,17 @@ class Taman_Nasional_Model extends CI_Model {
   public function getDataTaman($idtaman){
     $this->load->database();
 
-    $query = $this->db->query('SELECT * FROM TamanNasional WHERE IdTN='.$idtaman);
+    $query = $this->db->query('SELECT * FROM TamanNasional WHERE IdTaman='.$this->db->escape($idtaman));
 
     $data = $query->row_array();
 
-     return $data;
+    return $data;
   }
 
   public function grabTamanByName($keyword){
     $this->load->database();
 
-    $query = $this->db->query('SELECT * FROM TamanNasional WHERE IdTN LIKE \'%'.$keyword.'%\'');
+    $query = $this->db->query('SELECT * FROM TamanNasional WHERE IdTaman LIKE \'%'.$keyword.'%\'');
 
     return $query->result_array();
   }
@@ -33,21 +33,28 @@ class Taman_Nasional_Model extends CI_Model {
 
     //return $query->result_array();
   }
+  public function grabTamanByProvince($keyword){
+    $this->load->database();
+
+    $query = $this->db->query('SELECT * FROM TamanNasional WHERE Provinsi LIKE \'%'.$keyword.'%\'');
+
+    return $query->result_array();
+  }
 
   public function getIdPenginapan($idtaman){
     $this->load->database();
 
-    $query = $this->db->query('SELECT * FROM Penginapan WHERE IdTN='.$idpenginapan);
+    $query = $this->db->query('SELECT * FROM Penginapan WHERE IdTaman='.$idpenginapan);
 
-    return $query->row_array();
+    return $query->result_array();
   }
 
   public function getIdFotoTaman($idTaman){
     $this->load->database();
 
-    $query = $this->db->query('SELECT * FROM Penginapan WHEREIdTN='.$idfoto);
+    $query = $this->db->query('SELECT * FROM FotoTaman WHEREIdTN='.$idfoto);
 
-    return $query->row_array();
+    return $query->result_array();
   }
 
 }
